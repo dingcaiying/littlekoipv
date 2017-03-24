@@ -1,0 +1,38 @@
+// customize scroll bar
+// @mixin scroll-y {
+//     &::-webkit-scrollbar {
+//         width: 10px;
+//         background-color: #EDEDED;
+//     }
+//     &::-webkit-scrollbar-thumb {
+//         border-radius: 1px;
+//         background-color: #CBCBCB;
+//     }
+// }
+
+@mixin transition($prop: all, $duration: .4s, $effect: ease-in-out) {
+    -webkit-transition: $prop $duration $effect;
+    transition: $prop $duration $effect;
+}
+
+@mixin transform($string) {
+    -webkit-transform: $string;
+    transform: $string;
+}
+
+
+@mixin clearfix {
+    *zoom: 1;
+    &:before {
+        content: " "; /* 1 */
+        display: table; /* 2 */
+    }
+    &:after {
+        content: " ";
+        display: table;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
