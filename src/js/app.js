@@ -1,4 +1,4 @@
-import jQuery from 'jquery';
+// import jQuery from 'jquery';
 
-console.log('jQuery', jQuery);
+console.log('hello world');
 
