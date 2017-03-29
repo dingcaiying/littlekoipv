@@ -1,4 +1,3 @@
-// import jQuery from 'jquery';
+import renderFrame from './frames/renderFrame';
 
-console.log('hello world');
-
+renderFrame();

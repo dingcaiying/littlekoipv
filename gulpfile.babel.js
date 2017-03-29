@@ -53,7 +53,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('lint', function() {
-  return gulp.src([`${SRC}/js/*.js`,'!node_modules/**'])
+  return gulp.src([`${SRC}/js/**/*.js`,'!node_modules/**'])
     .pipe(eslint())
     .pipe(eslint.format());
 });
@@ -71,8 +71,8 @@ gulp.task('build', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(`${SRC}/scss/*.scss`, ['sass']);
-    gulp.watch(`${SRC}/js/*.js`, ['js', 'lint']);
+    gulp.watch(`${SRC}/scss/**/*.scss`, ['sass']);
+    gulp.watch(`${SRC}/js/**/*.js`, ['js', 'lint']);
     gulp.watch(`${SRC}/assets/**`, ['build']);
 });
 

@@ -9,5 +9,9 @@
   },
   "globals": {
     "d3": true
+  },
+  "rules": {
+    "class-methods-use-this": 1,
+    "no-plusplus": 0
   }
 }
