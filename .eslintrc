@@ -12,6 +12,8 @@
   },
   "rules": {
     "class-methods-use-this": 1,
-    "no-plusplus": 0
+    "no-plusplus": 0,
+    "no-underscore-dangle": 0,
+    "no-unused-vars": 0
   }
 }

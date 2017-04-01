@@ -74,6 +74,7 @@ gulp.task('watch', function() {
     gulp.watch(`${SRC}/scss/**/*.scss`, ['sass']);
     gulp.watch(`${SRC}/js/**/*.js`, ['js', 'lint']);
     gulp.watch(`${SRC}/assets/**`, ['build']);
+    gulp.watch(`${SRC}/*.html`, ['build']);
 });
 
 gulp.task('default', gulpsync.sync(['clean', 'build', 'sass', 'js', 'lint', 'serve', 'watch']));
