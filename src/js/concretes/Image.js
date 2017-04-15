@@ -9,15 +9,11 @@ class Image extends AbstractMoving {
     this.element = $('<div class="image"></div>');
   }
 
-  draw($container, src, x, y, width, height) {
+  draw($container, src, cOptions) {
+    const options = Object.assign({}, cOptions);
     $container.append(this.element);
     this.element.append(`<img src=${src} />`);
-    this.element.css({
-      width,
-      height,
-      left: x,
-      top: y,
-    });
+    this.element.css(options);
   }
 
   move(duration, vars) {

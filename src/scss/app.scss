@@ -5,15 +5,14 @@
 @import "core/common";
 
 // Layout
-
 @import "layout/global";
 
+// Elements
+@import "elements/petal";
+@import "elements/image";
 
 // Frame
-
 @import "frames/base";
+@import "frames/frame";
 
-// Components
 
-@import "components/frame";
-@import "components/petal";

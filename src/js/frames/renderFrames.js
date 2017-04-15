@@ -30,7 +30,11 @@ const renderFrames = ($container) => {
         y: gen.random(0, viewSize.h),
       };
       const petal = petalFactory.createPetal();
-      petal.draw($curFrame, start.x, start.y);
+      petal.draw($curFrame, {
+        left: start.x,
+        top: start.y,
+        'z-index': 1,
+      });
       tl.add(petal.move(5, {
         left: end.x,
         top: end.y,
@@ -47,7 +51,7 @@ const renderFrames = ($container) => {
     // Display text
 
     const image = imageFactory.create();
-    image.draw($curFrame, '/assets/images/opening_text.jpg', 0, 0, 270);
+    image.draw($curFrame, '/assets/images/opening_text.jpg', { width: 270 });
 
   })();
 };

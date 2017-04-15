@@ -13,13 +13,10 @@ class Petal extends AbstractMoving {
    * draw petel in the container, with position provided
    * @return {[type]} [description]
    */
-  draw($container, x, y, transform) {
+  draw($container, cOptions) {
+    const options = Object.assign({}, cOptions);
     $container.append(this.element);
-    this.element.css({
-      left: x,
-      top: y,
-      transform,
-    });
+    this.element.css(options);
   }
 
   move(duration, vars) {
