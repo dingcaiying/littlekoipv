@@ -7,7 +7,7 @@ class PetalFactory {
   }
 
   createPetal() {
-    console.log(this.count++);
+    // console.log(this.count++);
     return new Petal();
   }
 }

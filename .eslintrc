@@ -17,6 +17,8 @@
     "no-unused-vars": 0,
     "new-cap": 0,
     "padded-blocks": 0,
-    "no-mixed-operators": 0
+    "no-mixed-operators": 0,
+    "max-len": 0,
+    "wrap-iife": 0
   }
 }

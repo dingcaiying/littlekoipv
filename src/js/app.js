@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import renderBg from './frames/renderBg';
 import renderFrames from './frames/renderFrames';
 
 // Singleton
@@ -18,6 +19,7 @@ class App {
 
   run() {
     const $container = $('#pv_canvas');
+    renderBg($container);
     renderFrames($container);
   }
 }

@@ -2,23 +2,21 @@ import $ from 'jquery';
 import { TweenMax } from 'gsap';
 import AbstractMoving from './AbstractMoving';
 
-class Petal extends AbstractMoving {
+class Image extends AbstractMoving {
 
   constructor(props) {
     super(props);
-    this.element = $('<div class="petal"></div>');
+    this.element = $('<div class="image"></div>');
   }
 
-  /**
-   * draw petel in the container, with position provided
-   * @return {[type]} [description]
-   */
-  draw($container, x, y, transform) {
+  draw($container, src, x, y, width, height) {
     $container.append(this.element);
+    this.element.append(`<img src=${src} />`);
     this.element.css({
+      width,
+      height,
       left: x,
       top: y,
-      transform,
     });
   }
 
@@ -27,4 +25,4 @@ class Petal extends AbstractMoving {
   }
 }
 
-export default Petal;
+export default Image;
