@@ -1,5 +1,7 @@
 import $ from 'jquery';
+import { TweenMax } from 'gsap';
 import AbstractMoving from './AbstractMoving';
+
 
 class Petal extends AbstractMoving {
 
@@ -15,14 +17,14 @@ class Petal extends AbstractMoving {
   draw($container, x, y, transform) {
     $container.append(this.element);
     this.element.css({
-      top: y,
       left: x,
+      top: y,
       transform,
     });
   }
 
-  move(destX, destY) {
-    console.log('move petal');
+  move(duration, vars) {
+    return new TweenMax.to(this.element, duration, vars);
   }
 }
 

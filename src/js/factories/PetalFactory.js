@@ -1,4 +1,4 @@
-import Petal from './concretes/Petal';
+import Petal from '../concretes/Petal';
 
 class PetalFactory {
 
