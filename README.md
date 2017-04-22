@@ -22,3 +22,8 @@ Image from: http://www.pixiv.net/member_illust.php?mode=medium&illust_id=5723620
 ## Helper
 * viewSize (get window size to place elements in good position)
 * randomGenerator (generate random values, with some helpful methods)
+
+
+### Issues
+* use stagger
+
