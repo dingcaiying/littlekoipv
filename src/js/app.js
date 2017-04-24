@@ -1,6 +1,19 @@
 import $ from 'jquery';
+import { createStore, combineReducers } from 'redux';
 import renderBg from './frames/renderBg';
 import renderFrames from './frames/renderFrames';
+
+import reducer from './reducers/index';
+
+// Store
+
+const store = createStore(reducer);
+
+store.dispatch({ type: '' }); // push initialState to stroe
+store.subscribe(() => {
+  console.log('store.getState', store.getState());
+});
+
 
 // Singleton
 
@@ -19,8 +32,8 @@ class App {
 
   run() {
     const $container = $('#pv_canvas');
-    renderBg($container);
-    renderFrames($container);
+    renderBg($container, store);
+    renderFrames($container, store);
   }
 }
 // Not support static properties. Pretend it is.

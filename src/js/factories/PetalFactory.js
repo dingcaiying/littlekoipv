@@ -6,7 +6,7 @@ class PetalFactory {
     this.count = 0;
   }
 
-  createPetal() {
+  create() {
     // console.log(this.count++);
     return new Petal();
   }

@@ -3,16 +3,18 @@ import { TimelineMax, Power3 } from 'gsap';
 import BezierPlugin from 'gsap/BezierPlugin';
 import PetalFactory from '../factories/PetalFactory';
 import ImageFactory from '../factories/ImageFactory';
+import TextFactory from '../factories/TextFactory';
 import viewSize from '../helper/viewSize';
 import gen from '../helper/randomGenerator';
 
-const renderFrames = ($container) => {
+const renderFrames = ($container, store) => {
 
   const $curFrame = $('<div class="frame"></div>');
   $container.append($curFrame);
 
   const petalFactory = new PetalFactory();
   const imageFactory = new ImageFactory();
+  const textFactory = new TextFactory();
 
   const tl = new TimelineMax();
 
@@ -29,7 +31,7 @@ const renderFrames = ($container) => {
         x: gen.random(0, viewSize.w),
         y: gen.random(0, viewSize.h),
       };
-      const petal = petalFactory.createPetal();
+      const petal = petalFactory.create();
       petal.draw($curFrame, {
         left: start.x,
         top: start.y,
@@ -64,7 +66,7 @@ const renderFrames = ($container) => {
   (function () {
     const image = imageFactory.create();
     image.draw($curFrame, '/assets/images/image_16.png', { width: 480, bottom: -500, right: -400, top: 'auto', left: 'auto', transform: 'none' });
-    tl.add(image.move(3, {
+    tl.add(image.move(5, {
       bottom: 0,
       right: 0,
       bezier: {
@@ -74,6 +76,16 @@ const renderFrames = ($container) => {
       transform: 'scale3D(0.8, 0.8, 1)',
       opacity: 0,
     }));
+
+    const text = textFactory.create();
+    text.draw($curFrame, 'by 天月', { width: 200, opacity: 0 });
+    tl.add(text.move(3, {
+      opacity: 1,
+    }), '-=5').add(text.move(3, {
+      opacity: 0,
+    }), '-=3').call(() => {
+      store.dispatch({ type: 'PROGRESS', data: 1 });
+    });
   })();
 
 };

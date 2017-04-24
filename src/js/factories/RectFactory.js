@@ -6,7 +6,7 @@ class RectFactory {
     this.count = 0;
   }
 
-  createRect() {
+  create() {
     // console.log(this.count++);
     return new Rect();
   }
