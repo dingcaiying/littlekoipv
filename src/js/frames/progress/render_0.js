@@ -15,11 +15,11 @@ const render_0 = (progress, $curFrame, store) => {
     for (let i = 0; i < petalTotal; i++) {
       const start = {
         x: gen.random(0, 0.2 * viewSize.w),
-        y: gen.random(-0.1 * viewSize.h, 0) - 20 * i,
+        y: gen.random(-0.1 * viewSize.h, 0) - 30 * i,
       };
       const end = {
-        x: gen.random(0, viewSize.w),
-        y: gen.random(viewSize.h / 2, viewSize.h),
+        x: gen.random(viewSize.w * 0.5, viewSize.w),
+        y: gen.random(viewSize.h, viewSize.h * 1.5),
       };
       const petal = petalFactory.create();
       petal.draw($curFrame, {
@@ -31,7 +31,7 @@ const render_0 = (progress, $curFrame, store) => {
         bezier: {
           values: [{ x: start.x, y: start.y }, { x: (end.x - start.x) / 2, y: (end.y - start.y) / 2 }, { x: end.x, y: end.y }],
           curviness: 1,
-          autoRotate: ['x', 'y', 'rotation', 70 + gen.random(10, 20), false],
+          autoRotate: ['x', 'y', 'rotation', 60 + gen.random(10, 30), false],
           type: 'thru',
         },
       }), '-=4.5');
@@ -51,18 +51,16 @@ const render_0 = (progress, $curFrame, store) => {
 
   // Boy
   (function () {
-    return;
     const image = imageFactory.create();
     image.draw($curFrame, '/assets/images/image_16.png', { width: 480, bottom: -500, right: -400, top: 'auto', left: 'auto', transform: 'none' });
-    tl.add(image.move(0, {
-      bottom: 0,
-      right: 0,
-      // bezier: {
-      //   values: [{ x: 0, y: 0 }, { x: -300, y: -200 }, { x: 0, y: 0 }],
-      // },
+    tl.add(image.move(5, {
+      bezier: {
+        values: [{ x: 0, y: 0 }, { x: -500, y: -400 }, { x: -400, y: -500 }],
+        curviness: 1,
+        type: 'thru',
+      },
     })).add(image.move(3, {
-      transform: 'scale3D(0.8, 0.8, 1)',
-      opacity: 0,
+      // opacity: 0,
     }));
 
     const text = textFactory.create();
@@ -72,6 +70,8 @@ const render_0 = (progress, $curFrame, store) => {
     }), '-=5').add(text.move(3, {
       opacity: 0,
     }), '-=3').call(() => {
+      // tl.clear();
+      // $curFrame.remove();
       store.dispatch({ type: 'PROGRESS', data: 1 });
     });
   })();
