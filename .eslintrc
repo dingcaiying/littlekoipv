@@ -19,6 +19,7 @@
     "padded-blocks": 0,
     "no-mixed-operators": 0,
     "max-len": 0,
-    "wrap-iife": 0
+    "wrap-iife": 0,
+    "camelcase": 0
   }
 }

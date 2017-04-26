@@ -14,7 +14,6 @@ class Rectangle extends AbstractMoving {
   }
 
   draw($container, x, y, width, height) {
-    console.log('draw rectangle');
     $container.append(this.element);
     this.element.css({
       width,

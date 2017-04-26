@@ -8,8 +8,6 @@ import reducer from './reducers/index';
 // Store
 
 const store = createStore(reducer);
-
-store.dispatch({ type: '' }); // push initialState to stroe
 store.subscribe(() => {
   console.log('store.getState', store.getState());
 });
@@ -32,7 +30,11 @@ class App {
 
   run() {
     const $container = $('#pv_canvas');
-    renderBg($container, store);
+    store.subscribe(() => {
+      renderBg($container, store);
+      // renderFrames($container, store);
+    });
+    store.dispatch({ type: 'PROGRESS', data: 0 });
     renderFrames($container, store);
   }
 }
