@@ -8,9 +8,6 @@ import reducer from './reducers/index';
 // Store
 
 const store = createStore(reducer);
-store.subscribe(() => {
-  console.log('store.getState', store.getState());
-});
 
 
 // Singleton
@@ -31,11 +28,11 @@ class App {
   run() {
     const $container = $('#pv_canvas');
     store.subscribe(() => {
+      console.log('store.getState', store.getState());
       renderBg($container, store);
-      // renderFrames($container, store);
+      renderFrames($container, store);
     });
     store.dispatch({ type: 'PROGRESS', data: 0 });
-    renderFrames($container, store);
   }
 }
 // Not support static properties. Pretend it is.

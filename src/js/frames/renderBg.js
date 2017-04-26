@@ -29,7 +29,6 @@ const getBg = (id, $container) => {
 };
 
 const progressRender = (progress, $curBg) => {
-  console.log('$curBg, progress', $curBg, progress);
   if (!typeof index === 'number') return null;
   switch (progress) {
     case 0: {
