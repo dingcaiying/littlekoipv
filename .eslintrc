@@ -20,6 +20,7 @@
     "no-mixed-operators": 0,
     "max-len": 0,
     "wrap-iife": 0,
-    "camelcase": 0
+    "camelcase": 0,
+    "func-names": 0
   }
 }

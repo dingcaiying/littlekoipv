@@ -18,7 +18,6 @@ const renderFrames = ($container, store) => {
   prevProgress = progress;
 
   const $frame0 = getFrame('frame_0', $container);
-  console.log('render frames progress', store.getState().progress);
   progressRender(progress, $frame0, store);
 
 };
@@ -36,8 +35,7 @@ const getFrame = (id, $container) => {
 };
 
 const progressRender = (progress, $curFrame, store) => {
-  // console.log('progressRender', progress);
-  if (!typeof progress === 'number') return null;
+  if (typeof progress !== 'number') return null;
   switch (progress) {
     case 0: {
       render_0(progress, $curFrame, store);

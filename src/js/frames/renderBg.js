@@ -34,8 +34,7 @@ const getBg = (id, $container) => {
 };
 
 const progressRender = (progress, $curBg, store) => {
-  console.log('progressRender bg', progress);
-  if (!typeof progress === 'number') return null;
+  if (typeof progress !== 'number') return null;
   switch (progress) {
     case 0: {
       $curBg.css({
