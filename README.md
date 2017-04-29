@@ -29,4 +29,6 @@ Just trying to play with javascript animation, using greensock.
 
 ### Issues
 * use stagger
+* store.subscribe order.  
+  - when dispatch actions from `renderBg` or `renderFrames`, subscribe listener not working as expected.
 
