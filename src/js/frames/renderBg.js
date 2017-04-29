@@ -9,7 +9,7 @@ const renderBg = ($container, store) => {
   const progress = state.progress;
 
   const $bg0 = getBg('backgr_0', $container);
-  progressRender(progress, $bg0);
+  progressRender(progress, $bg0, store);
 
   // const tl = new TimelineMax();
 
@@ -28,19 +28,35 @@ const getBg = (id, $container) => {
   return target;
 };
 
-const progressRender = (progress, $curBg) => {
-  if (!typeof index === 'number') return null;
+const progressRender = (progress, $curBg, store) => {
+  console.log('progressRender bg', progress);
+  if (!typeof progress === 'number') return null;
   switch (progress) {
     case 0: {
       $curBg.css({
-        'background-color': '#f9efeb',
+        backgroundColor: '#f9efeb',
       });
-      return null;
+      break;
+    }
+    case 1: {
+      TweenMax.to($curBg, 2, {
+        backgroundColor: '#ffffff',
+      });
+      store.dispatch({ type: 'PROGRESS', data: 2 });
+      break;
+    }
+    case 2: {
+      TweenMax.to($curBg, 2, {
+        backgroundColor: '#EFEDE5',
+        delay: 2,
+      });
+      break;
     }
     default: {
-      return null;
+      break;
     }
   }
+  return null;
 };
 
 

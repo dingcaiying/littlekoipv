@@ -9,6 +9,10 @@ class Image extends AbstractMoving {
     this.element = $('<div class="image"></div>');
   }
 
+  getElement() {
+    return this.element;
+  }
+
   draw($container, src, cOptions) {
     const options = Object.assign({}, cOptions);
     $container.append(this.element);

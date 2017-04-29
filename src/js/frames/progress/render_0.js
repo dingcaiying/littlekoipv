@@ -11,6 +11,7 @@ const render_0 = (progress, $curFrame, store) => {
 
   // Generate petals
   (function () {
+    return;
     const petalTotal = 5;
     for (let i = 0; i < petalTotal; i++) {
       const start = {
@@ -40,6 +41,7 @@ const render_0 = (progress, $curFrame, store) => {
 
   // Display text
   (function () {
+    return;
     const image = imageFactory.create();
     image.draw($curFrame, '/assets/images/opening_text.jpg', { width: 270, opacity: 0 });
     tl.add(image.move(3, {
@@ -51,16 +53,18 @@ const render_0 = (progress, $curFrame, store) => {
 
   // Boy
   (function () {
+    store.dispatch({ type: 'PROGRESS', data: 1 });
+    return;
     const image = imageFactory.create();
     image.draw($curFrame, '/assets/images/image_16.png', { width: 480, bottom: -500, right: -400, top: 'auto', left: 'auto', transform: 'none' });
     tl.add(image.move(5, {
       bezier: {
-        values: [{ x: 0, y: 0 }, { x: -500, y: -400 }, { x: -400, y: -500 }],
+        values: [{ x: 0, y: 0 }, { x: -500, y: -400 }, { x: -400, y: -493 }],
         curviness: 1,
         type: 'thru',
       },
     })).add(image.move(3, {
-      // opacity: 0,
+      opacity: 0,
     }));
 
     const text = textFactory.create();
@@ -70,8 +74,8 @@ const render_0 = (progress, $curFrame, store) => {
     }), '-=5').add(text.move(3, {
       opacity: 0,
     }), '-=3').call(() => {
-      // tl.clear();
-      // $curFrame.remove();
+      tl.clear();
+      $curFrame.remove();
       store.dispatch({ type: 'PROGRESS', data: 1 });
     });
   })();

@@ -3,6 +3,7 @@ import $ from 'jquery';
 
 // progress render
 import render_0 from './progress/render_0';
+import render_2 from './progress/render_2';
 
 /* eslint-disable no-use-before-define */
 
@@ -12,6 +13,7 @@ const renderFrames = ($container, store) => {
   const progress = state.progress;
 
   const $frame0 = getFrame('frame_0', $container);
+  console.log('render frames progress', store.getState().progress);
   progressRender(progress, $frame0, store);
 
 };
@@ -29,16 +31,25 @@ const getFrame = (id, $container) => {
 };
 
 const progressRender = (progress, $curFrame, store) => {
-  if (!typeof index === 'number') return null;
+  // console.log('progressRender', progress);
+  if (!typeof progress === 'number') return null;
   switch (progress) {
     case 0: {
       render_0(progress, $curFrame, store);
-      return null;
+      break;
+    }
+    case 1: {
+      break;
+    }
+    case 2: {
+      render_2(progress, $curFrame, store);
+      break;
     }
     default: {
-      return null;
+      break;
     }
   }
+  return null;
 };
 
 export default renderFrames;

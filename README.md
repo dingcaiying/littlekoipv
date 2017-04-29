@@ -1,5 +1,8 @@
 
 Image from: http://www.pixiv.net/member_illust.php?mode=medium&illust_id=57236204.
+Whole video is here: https://www.youtube.com/watch?v=Woorod1gJ_w
+
+Just trying to play with javascript animation, using greensock.
 
 ## Concrete elements
 * Petal
