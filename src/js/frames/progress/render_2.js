@@ -1,10 +1,16 @@
 import { TweenMax, TimelineMax, Power3 } from 'gsap';
 import { petalFactory, imageFactory, textFactory } from '../../factories/instances';
 
+/* eslint-disable no-unreachable */
+
 const render_2 = (progress, $curFrame, store) => {
   const tl = new TimelineMax();
 
   (function () {
+
+    store.dispatch({ type: 'PROGRESS', data: 3 });
+    return;
+
     const imageL = imageFactory.create();
     const imageR = imageFactory.create();
     const imageR2 = imageFactory.create();
@@ -49,8 +55,11 @@ const render_2 = (progress, $curFrame, store) => {
       .add(imageR.move(1, { opacity: 0, ease: Power3.easeIn }))
       .add(imageR2.move(1, { opacity: 1 }), '-=0.2')
       .add(imageR2.move(1.6, { opacity: 0, ease: Power3.easeIn }), '-=0.2')
-      .add(imageR3.move(2, { opacity: 1 }), '-=0.8')
-      .add(imageL.move(2, { opacity: 1 }), '-=2.8');
+      .add(imageR3.move(2, { opacity: 1 }), '-=1')
+      .add(imageL.move(2, { opacity: 1 }), '-=2.8')
+      .call(() => {
+        store.dispatch({ type: 'PROGRESS', data: 3 });
+      });
   })();
 };
 

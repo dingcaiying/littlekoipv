@@ -1,0 +1,47 @@
+$transformer-height: 22px;
+
+.transformer {
+  opacity: 0;
+  @extend .center-abs;
+  width: 18px;
+  height: $transformer-height;
+  .text-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .inner {
+      @extend .center-abs;
+      width: 10rem;
+      height: 100%;
+      line-height: $transformer-height;
+      text-align: center;
+      color: #fff;
+      z-index: 1;
+    }
+  }
+  span {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #6a605a;
+    b {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: $transformer-height + 2px;
+      @include transform(translateX(-50%) translateY(-50%));
+      background: rgb(239, 237, 229);
+    }
+  }
+  .mask {
+    @extend .center-abs;
+    width: 0;
+    height: 0;
+    background-color: #6a605a;
+  }
+}

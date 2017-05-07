@@ -4,6 +4,7 @@ import $ from 'jquery';
 // progress render
 import render_0 from './progress/render_0';
 import render_2 from './progress/render_2';
+import render_3 from './progress/render_3';
 
 /* eslint-disable no-use-before-define */
 
@@ -46,6 +47,10 @@ const progressRender = (progress, $curFrame, store) => {
     }
     case 2: {
       render_2(progress, $curFrame, store);
+      break;
+    }
+    case 3: {
+      render_3(progress, $curFrame, store);
       break;
     }
     default: {

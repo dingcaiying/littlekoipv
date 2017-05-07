@@ -11,7 +11,7 @@ const render_0 = (progress, $curFrame, store) => {
 
   // Generate petals
   (function () {
-    // return;
+    return;
     const petalTotal = 5;
     for (let i = 0; i < petalTotal; i++) {
       const start = {
@@ -20,7 +20,7 @@ const render_0 = (progress, $curFrame, store) => {
       };
       const end = {
         x: gen.random(viewSize.w * 0.5, viewSize.w),
-        y: gen.random(viewSize.h, viewSize.h * 1.5),
+        y: gen.random(viewSize.h * 1.2, viewSize.h * 1.5),
       };
       const petal = petalFactory.create();
       petal.draw($curFrame, {
@@ -41,7 +41,7 @@ const render_0 = (progress, $curFrame, store) => {
 
   // Display text
   (function () {
-    // return;
+    return;
     const image = imageFactory.create();
     image.draw($curFrame, '/assets/images/opening_text.jpg', { width: 270, opacity: 0 });
     tl.add(image.move(2, {
@@ -53,8 +53,8 @@ const render_0 = (progress, $curFrame, store) => {
 
   // Boy
   (function () {
-    // store.dispatch({ type: 'PROGRESS', data: 1 });
-    // return;
+    store.dispatch({ type: 'PROGRESS', data: 1 });
+    return;
     const image = imageFactory.create();
     image.draw($curFrame, '/assets/images/image_16.png', { width: 480, bottom: -500, right: -400, top: 'auto', left: 'auto', transform: 'none' });
     tl.add(image.move(4, {
