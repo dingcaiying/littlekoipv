@@ -22,6 +22,7 @@
     "wrap-iife": 0,
     "camelcase": 0,
     "func-names": 0,
-    "newline-per-chained-call": 0
+    "newline-per-chained-call": 0,
+    "no-unreachable": 1,
   }
 }

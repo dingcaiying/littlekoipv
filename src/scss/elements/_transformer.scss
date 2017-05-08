@@ -1,4 +1,4 @@
-$transformer-height: 22px;
+$transformer-height: 20px;
 
 .transformer {
   opacity: 0;
@@ -14,6 +14,7 @@ $transformer-height: 22px;
       @extend .center-abs;
       width: 10rem;
       height: 100%;
+      font-size: 15px;
       line-height: $transformer-height;
       text-align: center;
       color: #fff;

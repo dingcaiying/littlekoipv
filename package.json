@@ -21,9 +21,9 @@
   },
   "homepage": "https://github.com/dingcaiying/littlekoipv#readme",
   "devDependencies": {
+    "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.24.0",
     "babelify": "^7.3.0",
     "browser-sync": "^2.18.8",
@@ -44,7 +44,6 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "babel-core": "^6.24.0",
     "gsap": "^1.19.1",
     "jquery": "^3.2.1",
     "redux": "^3.6.0"

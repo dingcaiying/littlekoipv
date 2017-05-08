@@ -34,8 +34,8 @@ const render_3 = (progress, $curFrame, store) => {
   Array.from(transformer.find('span')).forEach((elem, i) => {
     tl.add(new TweenMax.to(elem, 0.076 * i, {
       rotationZ: 25.7 * i,
-      ease: Power3.easeIn,
-    }), `-=${i > 0 ? 0.076 * (i - 1) : 0}`);
+      // ease: Power3.easeIn,
+    }), `-=${i > 0 ? 0.08 * (i - 1) : 0}`);
   });
   tl.add(new TweenMax.to(transformer.find('b'), 0.6, {
     width: 128,
