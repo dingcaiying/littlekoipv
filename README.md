@@ -1,5 +1,6 @@
 
-* Preview: https://dingcaiying.github.io/build/pages/littlekoipv/index.html
+Preview: https://dingcaiying.github.io/build/pages/littlekoipv/index.html
+
 
 Image from: http://www.pixiv.net/member_illust.php?mode=medium&illust_id=57236204.
 
